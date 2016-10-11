@@ -75,4 +75,4 @@ More information can be found **[here](http://git-scm.com/book/en/Git-Internals-
 
 ## Submission
 
-Answer questions **Q1-Q3** in a file called `lab3.txt` and push it to the repository created for this purpose. Also include a `partners.txt` file to indicate your name and Github id as well as the same information for your lab activity partner.
+Answer questions **Q1-Q3** in a file called `lab5.txt` and push it to the repository created for this purpose. Also include a `partners.txt` file to indicate your name and Github id as well as the same information for your lab activity partner.
