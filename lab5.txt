@@ -1,0 +1,56 @@
+Q1
+------------------------
+Rep1: Simple rep, easy to understand and has advantage in some simple graphs.
+      One segment with two points already can represent a line. 
+Rep2: A little bit complicated rep, has specific methods to describe different 
+      types of lines. It is better to represent some complicated graphs.
+Rep3: Comparing to previous two reps. This one is too hard to use. Although one 
+      Component can represent one line, but this list has infinite points inside.
+      Not recommend at all if we have previous two reps.
+
+      
+Q2
+--------------------------------
+GitBlob:  This represent a file which is byte array type. This file method addToFile can add 
+byte inside a new Blob type with certain index. Also replace method can certain indexed byte.
+
+GitTree:  A tree in git represents a directory. This file has field two lists with GitTree and GitBlob.
+This rep contains addTree and addBlob which can add tree and add blob into. getTree can get the reference of tree
+
+GitCommit:   A commit in git represents a snapshot of your file system's history. Author name, date ,tree, message and parentCommit
+inside the fields. This rep can modify message and author.
+
+
+
+
+
+Q3
+-------------------------
+GitBlob.java
+
+public GitBlob(byte[] bytes)                            Creator
+public GitBlob addToFile(int index, byte[] newBytes)    Creator
+public void replace(int index, byte[] newBytes)         Mutator
+public String getChecksum()                             Observer
+public String toString()                                Observer
+public boolean contains(String w)                       Observer
+
+------------------------------
+GitTree.java
+
+public GitTree(List<GitTree> trees, List<GitBlob> blobs)       Creator
+public GitTree addTree(GitTree t)                              Producer    exposure
+public GitTree addBlob(GitBlob o)                              Mutator
+public GitTree getTree(String checksum)                        Mutator     exposure
+public String getChecksum()                                    Observer
+public String toString()                                       Observer
+
+-------------------------------------------
+GitCommit.java
+
+public GitCommit(String author, Date date, GitTree tree, String message,
+            GitCommit parentCommit)                   Creator
+public void ammendMessage(String message)             Mutator
+public void ammendAuthor(String author)               Mutator
+public String getChecksum()                           Observer
+public String toString()                              Observer
